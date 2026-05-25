@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversiq AI | WhatsApp Chat Bot Automation by BITSOL Marketing</title>
+    <meta name="description" content="Stop losing WhatsApp leads. Meet Conversiq AI - the premium WhatsApp automated chat bot that converts messages into sales 24/7. Built by BITSOL Marketing.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Conversiq AI | Cinematic WhatsApp Chat Bot Automation">
+    <meta property="og:description" content="Scale your WhatsApp customer interactions automatically with Conversiq AI. Enjoy 24/7 lead captures, instant CRM sync, and automatic PKR growth.">
+    <meta property="og:type" content="website">
+    
+    <!-- Site Icon (Favicon) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230066cc'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='10' y='10' width='80' height='80' rx='24' fill='url(%23g)'/%3E%3Cpath d='M35 35h30c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H45L31 81V67c-2.4 0-4-.8-4-4V43c0-4.4 3.6-8 8-8z' fill='%23ffffff'/%3E%3Cpath d='M53 43L43 55h8l-2 10 10-12h-8z' fill='url(%23g)'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts & Global Stylesheet Link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Cinematic Background Video Manager (Fixed Frame Container) -->
+    <div class="cinematic-bg" aria-hidden="true">
+        <!-- Scene 1: Hero background (Overwhelmed messages) -->
+        <div class="bg-video-wrapper active" id="video-scene-1">
+            <video class="bg-video" autoplay muted playsinline webkit-playsinline preload="metadata">
+                <source src="scene 1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Scene 3: Intro background (AI Logo reveal) -->
+        <div class="bg-video-wrapper" id="video-scene-3">
+            <video class="bg-video" autoplay muted playsinline webkit-playsinline preload="metadata">
+                <source src="scene 3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Scene 4: Live Chat Demo background -->
+        <div class="bg-video-wrapper" id="video-scene-4">
+            <video class="bg-video" autoplay muted playsinline webkit-playsinline preload="metadata">
+                <source src="Scene 4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Scene 5: Business Growth background -->
+        <div class="bg-video-wrapper" id="video-scene-5">
+            <video class="bg-video" autoplay muted playsinline webkit-playsinline preload="metadata">
+                <source src="Scene 5.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Scene 7: Pricing background -->
+        <div class="bg-video-wrapper" id="video-scene-7">
+            <video class="bg-video" autoplay muted playsinline webkit-playsinline preload="metadata">
+                <source src="scene 7.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Scene 8: Final CTA background (Logo closeout) -->
+        <div class="bg-video-wrapper" id="video-scene-8">
+            <video class="bg-video" autoplay muted playsinline webkit-playsinline preload="metadata">
+                <source src="scene 8.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Cinematic Dark Vignette Overlay -->
+        <div class="cinematic-overlay"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header" id="main-header">
+        <div class="nav-container">
+            <a href="#hero" class="logo" id="nav-logo" aria-label="Conversiq Home">
+                <svg viewBox="0 0 100 100" class="logo-icon-svg" style="width: 34px; height: 34px; flex-shrink: 0;" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--neon-blue)" />
+                            <stop offset="100%" stop-color="var(--neon-purple)" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="10" width="80" height="80" rx="24" fill="url(#logo-grad)" />
+                    <path d="M35 35h30c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H45L31 81V67c-2.4 0-4-.8-4-4V43c0-4.4 3.6-8 8-8z" fill="#ffffff" />
+                    <path d="M53 43L43 55h8l-2 10 10-12h-8z" fill="url(#logo-grad)" />
+                </svg>
+                <div>
+                    <div>CONVERSIQ</div>
+                    <div class="logo-sub">By BITSOL Marketing</div>
+                </div>
+            </a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+                <a href="#intro" class="nav-link">Introduction</a>
+                <a href="#demo" class="nav-link">Live Chat</a>
+                <a href="#growth" class="nav-link">Growth</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#cta" class="nav-btn">Consultation</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar Dot Navigation (Desktop Story Indicator) -->
+    <div class="story-indicators" aria-hidden="true">
+        <button class="indicator-dot active" data-section="hero" data-label="Lost Leads" aria-label="Hero Section"></button>
+        <button class="indicator-dot" data-section="intro" data-label="Meet Conversiq" aria-label="Product Intro Section"></button>
+        <button class="indicator-dot" data-section="demo" data-label="Automation" aria-label="Live Demo Section"></button>
+        <button class="indicator-dot" data-section="growth" data-label="Performance" aria-label="Growth Section"></button>
+        <button class="indicator-dot" data-section="features" data-label="Core Engine" aria-label="Features Section"></button>
+        <button class="indicator-dot" data-section="pricing" data-label="Investment" aria-label="Pricing Section"></button>
+        <button class="indicator-dot" data-section="cta" data-label="Scale Now" aria-label="Final CTA Section"></button>
+    </div>
+
+    <!-- SECTION 1: Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <span class="hero-tag">Conversiq AI Launch</span>
+                <h1 class="hero-title">
+                    <span>Still Losing Customers in</span>
+                    <span class="gradient-text glow-blue">WhatsApp Messages?</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Your customers expect instant replies. While you sleep, they leave. Stop the leak instantly with Conversiq.
+                </p>
+                <div class="hero-ctas">
+                    <!-- CTA #1 -->
+                    <a href="javascript:void(0)" class="btn btn-primary trigger-modal">
+                        <span>Try Conversiq</span>
+                    </a>
+                    <a href="#intro" class="btn btn-secondary">Explore AI Solution</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Product Introduction (Intro) -->
+    <section id="intro">
+        <div class="container">
+            <div class="intro-panel glass-panel reveal">
+                <div class="intro-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12c0-2.4 1.35-4.48 3.32-6"></path>
+                        <path d="m12 8-4 4h8Z"></path>
+                    </svg>
+                </div>
+                <h2 class="gradient-text">Meet Conversiq AI</h2>
+                <h3 class="glow-purple">Smart Conversations. Real Business Growth.</h3>
+                <p>
+                    Conversiq is an ultra-premium, AI-driven automation engine that turns your WhatsApp chats into a structured sales machine. No templates. No delays. Just intelligent conversions, every second of the day.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Live Chat Demo -->
+    <section id="demo">
+        <div class="container">
+            <div class="demo-grid">
+                <div class="demo-features reveal">
+                    <div class="section-intro">
+                        <h2 class="gradient-text">WhatsApp AI Automation</h2>
+                        <p>Fully automated communication, direct to their inbox.</p>
+                    </div>
+                    
+                    <div class="demo-feature-card glass-panel active" data-flow="replies">
+                        <div class="demo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="demo-info">
+                            <h4>Instant Replies</h4>
+                            <p>Sub-second cognitive text generation responding to queries in English, Roman Urdu, and Urdu.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-feature-card glass-panel" data-flow="automation">
+                        <div class="demo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="demo-info">
+                            <h4>24/7 Sales Agent</h4>
+                            <p>Never close your shop. Book orders, schedule appointments, and pitch products while you rest.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-feature-card glass-panel" data-flow="capture">
+                        <div class="demo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="demo-info">
+                            <h4>Lead Capture</h4>
+                            <p>Seamless data extraction logs client names, phone numbers, and requirements directly to your sheets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive WhatsApp Phone Simulation Wrapper -->
+                <div class="phone-wrapper reveal">
+                    <div class="phone-container">
+                        <div class="phone-glow"></div>
+                        <div class="phone-notch"></div>
+                        <div class="phone-header">
+                            <div class="phone-avatar">CQ</div>
+                            <div class="phone-meta">
+                                <h5>Conversiq AI Agent</h5>
+                                <div class="phone-status">Online</div>
+                            </div>
+                        </div>
+                        <div class="phone-body" id="whatsapp-chat-body">
+                            <!-- Populated dynamically via script.js loops -->
+                        </div>
+                        <div class="typing-bubble" id="whatsapp-typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                        <div class="phone-footer">
+                            <div class="phone-input">Type a message...</div>
+                            <button class="phone-send-btn" aria-label="Send message">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M2 21l21-9L2 3v7l15 2-15 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Business Growth -->
+    <section id="growth">
+        <div class="container">
+            <div class="growth-grid">
+                <div class="reveal">
+                    <div class="section-intro" style="text-align: left; margin-bottom: 2.5rem;">
+                        <span class="hero-tag" style="margin-bottom: 1.5rem;">Unrivaled Performance</span>
+                        <h2 class="gradient-text">Engineered for Massive Business Scale</h2>
+                        <p>Watch your sales pipeline accelerate as AI answers every client lead instantaneously.</p>
+                    </div>
+                    
+                    <div class="stats-card-wrapper">
+                        <div class="stat-card glass-panel">
+                            <div class="stat-number">+300%</div>
+                            <div class="stat-label">Inbound Leads Saved</div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-number">10x</div>
+                            <div class="stat-label">Faster Response Times</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wireframe Dashboard showing stats growth visualizer -->
+                <div class="growth-visual-card glass-panel reveal">
+                    <div class="dashboard-wireframe">
+                        <div class="wire-header">
+                            <div class="wire-dots">
+                                <div class="wire-dot"></div>
+                                <div class="wire-dot"></div>
+                                <div class="wire-dot"></div>
+                            </div>
+                            <div class="hero-tag" style="margin: 0; font-size: 0.65rem; padding: 0.3rem 0.8rem;">CONVERSIQ ENGAGEMENT ANALYTICS</div>
+                        </div>
+                        <div class="wire-bar-chart">
+                            <div class="wire-bar" style="--h: 25%"></div>
+                            <div class="wire-bar" style="--h: 38%"></div>
+                            <div class="wire-bar" style="--h: 30%"></div>
+                            <div class="wire-bar" style="--h: 55%"></div>
+                            <div class="wire-bar" style="--h: 42%"></div>
+                            <div class="wire-bar active" style="--h: 92%"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-secondary); padding: 0 0.5rem;">
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span class="glow-blue" style="font-weight: bold; color: var(--neon-blue);">Sat (AI Enabled)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Core Features Grid -->
+    <section id="features">
+        <div class="container">
+            <div class="section-intro" style="margin-left: auto; margin-right: auto; max-width: 600px;">
+                <span class="hero-tag">Technological Depth</span>
+                <h2 class="gradient-text">Engineered for Complete Control</h2>
+                <p>An enterprise-grade stack customized and deployed for your business structure.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-box glass-panel reveal">
+                    <div class="feature-box-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            <path d="M2 12h20"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Multilingual Cognitive Processing</h3>
+                    <p class="feature-box-desc">Converse natively in English, Roman Urdu, and Urdu. The engine deciphers local slang and regional dialect syntax seamlessly.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-box glass-panel reveal reveal-delay-1">
+                    <div class="feature-box-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Instant Sheets & CRM Syncing</h3>
+                    <p class="feature-box-desc">Automatically log prospective clients, purchase requests, details, and message time stamps directly to Google Sheets, Notion, or custom CRMs.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-box glass-panel reveal reveal-delay-2">
+                    <div class="feature-box-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Smooth Live Human Handovers</h3>
+                    <p class="feature-box-desc">When standard inquiries shift to hot sales negotiations, the AI seamlessly routes the conversation to live agents on mobile or desktop.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-box glass-panel reveal">
+                    <div class="feature-box-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Automatic Smart Cataloging</h3>
+                    <p class="feature-box-desc">Present high-resolution product images, specifications, and dynamic checkout links directly within the WhatsApp frame on request.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-box glass-panel reveal reveal-delay-1">
+                    <div class="feature-box-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <polyline points="1 20 1 14 7 14"></polyline>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Intent-Based Re-engagement</h3>
+                    <p class="feature-box-desc">Trigger intelligent follow-ups for warm leads who went cold, bringing them back into the sales loop at optimal times without spamming.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-box glass-panel reveal reveal-delay-2">
+                    <div class="feature-box-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Secure Enterprise API Core</h3>
+                    <p class="feature-box-desc">Full integration with secure cloud servers and modern Meta API frameworks. Guaranteed 99.9% chatbot uptime with continuous telemetry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="pricing-wrapper reveal">
+                <div class="pricing-card glass-panel">
+                    <div class="pricing-tier">Enterprise Acceleration Package</div>
+                    <div class="pricing-cost">PKR 20,000</div>
+                    <div class="pricing-period">One-Time Setup Investment</div>
+                    
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Custom AI Chatbot Persona Tuning
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Secure WhatsApp API Integration
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Google Sheets Lead Log System
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Lifetime Core Updates
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Dedicated Live Chat Support Setup
+                        </li>
+                    </ul>
+
+                    <!-- CTA #2 -->
+                    <a href="javascript:void(0)" class="btn btn-primary pricing-cta trigger-modal">
+                        <span>Try Conversiq</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Final CTA & Footer -->
+    <section id="cta">
+        <div class="container">
+            <div class="cta-layout">
+                <div class="cta-info reveal">
+                    <span class="hero-tag" style="margin-bottom: 1.5rem;">Start Scaling Today</span>
+                    <h2>Ready to Supercharge your WhatsApp?</h2>
+                    <p>
+                        Scale your customer interactions from overwhelmed to hyper-efficient. Let Conversiq turn your chats into direct conversions, backed by BITSOL Marketing's top-tier integration services.
+                    </p>
+
+                    <div class="contact-meta">
+                        <!-- Email Card -->
+                        <div class="contact-meta-item">
+                            <div class="contact-icon">
+                                <svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Direct Consultation</h5>
+                                <p><a href="mailto:info@bitsolmarketing.com">info@bitsolmarketing.com</a></p>
+                            </div>
+                        </div>
+                        <!-- Live Testing Phone Card -->
+                        <div class="contact-meta-item" style="margin-top: 1.25rem;">
+                            <div class="contact-icon" style="color: var(--neon-blue); border-color: rgba(0, 240, 255, 0.25);">
+                                <svg fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Live WhatsApp Bot 1.0 Testing</h5>
+                                <p><a href="https://wa.me/923120141581" target="_blank" rel="noopener">+92 312 0141581</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-action-panel glass-panel reveal" style="padding: 3.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;">
+                    <div class="intro-icon-wrapper" style="margin: 0; width: 68px; height: 68px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Start Your Conversiq Journey</h3>
+                    <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem; margin: 0 auto; text-align: center; margin-top: -1rem;">Secure your custom AI setup package and sync Conversiq AI to your business today.</p>
+                    <!-- CTA #3 -->
+                    <button class="btn btn-primary trigger-modal" style="width: 100%; max-width: 280px; border: none;">
+                        <span>Try Conversiq</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer Structure -->
+            <footer class="footer-bar reveal">
+                <div class="footer-copyright">
+                    © 2026 BITSOL Marketing. All rights reserved. Built for elite enterprises.
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Back to top</a>
+                    <a href="https://bitsol.marketing" target="_blank" rel="noopener">BITSOL Marketing</a>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- BITSOL Conversiq Popup Registration Modal -->
+    <div class="modal-overlay" id="registrationModal" aria-hidden="true">
+        <div class="modal-content glass-panel" id="modalContentWrapper">
+            <button class="modal-close" id="modalClose" aria-label="Close registration modal">×</button>
+            
+            <!-- Standard Form State -->
+            <div id="modalFormState">
+                <h3>Deploy Conversiq AI</h3>
+                <p>Enter your details and our team will get in touch on WhatsApp to initiate your setup.</p>
+                
+                <form class="lead-form" id="leadForm">
+                    <div class="form-group">
+                        <label for="clientName">Full Name</label>
+                        <input type="text" id="clientName" class="form-input" placeholder="e.g. Hammad Khan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPhone">WhatsApp Number</label>
+                        <input type="tel" id="clientPhone" class="form-input" placeholder="e.g. +92 312 0141581" required>
+                    </div>
+                    <!-- Business Niche Dropdown -->
+                    <div class="form-group">
+                        <label for="businessCategory">Business Niche</label>
+                        <div class="select-wrapper">
+                            <select id="businessCategory" class="form-input form-select" required>
+                                <option value="" disabled selected>Select Business Category</option>
+                                <option value="E-commerce Store">E-commerce Store</option>
+                                <option value="Retail & Physical Shop">Retail & Physical Shop</option>
+                                <option value="Service Agency">Service Agency</option>
+                                <option value="Real Estate & Development">Real Estate & Development</option>
+                                <option value="SaaS & Tech Startup">SaaS & Tech Startup</option>
+                                <option value="Other Industry">Other Industry</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Monthly Chat Volume Dropdown -->
+                    <div class="form-group">
+                        <label for="chatVolume">Monthly WhatsApp Inbound Volume</label>
+                        <div class="select-wrapper">
+                            <select id="chatVolume" class="form-input form-select" required>
+                                <option value="" disabled selected>Select Monthly Volume</option>
+                                <option value="Less than 1,000 chats/mo">Less than 1,000 chats/mo</option>
+                                <option value="1,000 - 5,000 chats/mo">1,000 - 5,000 chats/mo</option>
+                                <option value="More than 5,000 chats/mo">More than 5,000 chats/mo</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary form-btn">
+                        <span>Try Conversiq</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Glowing Glassmorphic Success State -->
+            <div id="modalSuccessState" style="display: none;">
+                <div class="success-checkmark-wrapper">
+                    <svg class="success-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+                <h3>Profile Compiled!</h3>
+                <p class="success-message">Syncing your workspace in real-time...</p>
+                <div class="redirect-indicator">
+                    <div class="pulse-dot"></div>
+                    <span>Redirecting to WhatsApp Bot Testing...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinematic Experience Controls (Floating Dashboard) -->
+    <div class="experience-controls-panel glass-panel" id="experienceControls">
+        <!-- Auto Play Toggle Button -->
+        <button class="control-btn" id="autoScrollToggle" aria-label="Toggle cinematic auto scroll">
+            <svg class="progress-ring-svg" width="20" height="20">
+                <circle class="progress-ring-bg" cx="10" cy="10" r="8" />
+                <circle class="progress-ring-circle" id="autoScrollProgressRing" cx="10" cy="10" r="8" />
+            </svg>
+            <span id="autoScrollText">Auto Play</span>
+        </button>
+        <div class="control-separator"></div>
+        <!-- Sound Toggle Button -->
+        <button class="control-btn" id="soundToggle" aria-label="Toggle cinematic audio">
+            <svg class="sound-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            <span id="soundText">Sound: Off</span>
+        </button>
+    </div>
+
+    <!-- Global Interactive Script Link -->
+    <script src="script.js"></script>
+</body>
+</html>

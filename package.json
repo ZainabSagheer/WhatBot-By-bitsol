@@ -1,0 +1,21 @@
+{
+  "name": "conversiq-landing-page",
+  "version": "1.0.0",
+  "description": "Premium cinematic SaaS landing page for Conversiq WhatsApp Chat Bot by BITSOL Marketing",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "conversiq",
+    "bitsol",
+    "landing-page",
+    "vite"
+  ],
+  "author": "BITSOL Marketing",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.2.11"
+  }
+}
