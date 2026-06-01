@@ -56,67 +56,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // 2. Cinematic Video Cross-Fader & Section Indicators
+    // 2. Scroll-Scrub Video Controller & Nav Indicators
     // -------------------------------------------------------------
     const sections = document.querySelectorAll('section');
-    const bgVideos = document.querySelectorAll('.bg-video-wrapper');
     const indicators = document.querySelectorAll('.indicator-dot');
+    const video = document.getElementById('scroll-bg-video');
 
-    const sectionToVideo = {
-        'hero': 'video-scene-1',
-        'intro': 'video-scene-3',
-        'demo': 'video-scene-4',
-        'growth': 'video-scene-5',
-        'features': 'video-scene-5', // shares Scene 5 background for transition continuity
-        'pricing': 'video-scene-7',
-        'cta': 'video-scene-8'
-    };
+    let targetVideoTime = 0;
+    let currentVideoTime = 0;
+    let videoDuration = 0;
 
-    // Store state of running timeouts to cancel inactive video triggers
-    const videoPauseTimeouts = {};
-    let isAudioMuted = true; // all videos start muted to conform to autoplay standards
-    
-    // Check if the current browser is running on a touch-enabled mobile device
-    const isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    if (video) {
+        // Force the video to be paused initially and load metadata
+        video.pause();
 
-    function crossfadeBackground(sectionId) {
-        const targetVideoId = sectionToVideo[sectionId];
-        
-        bgVideos.forEach(wrapper => {
-            const video = wrapper.querySelector('video');
-            if (wrapper.id === targetVideoId) {
-                // Cancel pending pauses for this video if any
-                if (videoPauseTimeouts[wrapper.id]) {
-                    clearTimeout(videoPauseTimeouts[wrapper.id]);
-                    delete videoPauseTimeouts[wrapper.id];
-                }
-                
-                wrapper.classList.add('active');
-                if (video) {
-                    video.muted = isAudioMuted; // set dynamic audio state on viewport focus
-                    video.currentTime = 0; // reset video to play from the beginning on scroll enter
-                    video.play().catch(err => {
-                        console.warn("Video playback interrupted/blocked on scroll transition: ", err);
-                    });
-                }
-            } else {
-                wrapper.classList.remove('active');
-                if (video) {
-                    video.muted = true; // force-mute background files instantly to prevent noise leaks
-                }
-                
-                // Pause background videos after the opacity fade transition completes to conserve CPU & GPU.
-                if (!isMobile && video && !video.paused && !videoPauseTimeouts[wrapper.id]) {
-                    videoPauseTimeouts[wrapper.id] = setTimeout(() => {
-                        if (!wrapper.classList.contains('active')) {
-                            video.pause();
-                        }
-                        delete videoPauseTimeouts[wrapper.id];
-                    }, 1200); // matches CSS fade speed
-                }
-            }
+        video.addEventListener('loadedmetadata', () => {
+            videoDuration = video.duration;
+            updateVideoProgress();
         });
+
+        // Fallback in case metadata has loaded early
+        if (video.readyState >= 1) {
+            videoDuration = video.duration;
+            updateVideoProgress();
+        }
     }
+
+    function updateVideoProgress() {
+        if (!video || !videoDuration) return;
+
+        const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (maxScroll <= 0) return;
+
+        const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScroll));
+        
+        // Map the scroll fraction to the video's total runtime
+        targetVideoTime = scrollFraction * videoDuration;
+    }
+
+    // High-performance smooth linear interpolation scrubbing (Apple-Style)
+    function renderVideoScrub() {
+        if (video && videoDuration) {
+            const lerpFactor = 0.08; // Adjust for responsiveness (lower = smoother, higher = tighter)
+            const diff = targetVideoTime - currentVideoTime;
+
+            if (Math.abs(diff) > 0.005) {
+                currentVideoTime += diff * lerpFactor;
+                video.currentTime = Math.max(0, Math.min(videoDuration - 0.05, currentVideoTime));
+            }
+        }
+        requestAnimationFrame(renderVideoScrub);
+    }
+
+    // Launch the rendering loop
+    requestAnimationFrame(renderVideoScrub);
 
     function updateNavIndicators(sectionId) {
         indicators.forEach(dot => {
@@ -128,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // High-performance scroll center calculation for instant video transitions
+    // High-performance scroll center calculation for UI highlights & auto scroll tours
     let currentActiveId = 'hero';
 
     function handleScrollSectionCheck() {
@@ -149,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (activeSection && activeSection.id !== currentActiveId) {
             currentActiveId = activeSection.id;
-            crossfadeBackground(currentActiveId);
             updateNavIndicators(currentActiveId);
             
             // Trigger auto scroll countdown reset and sync
@@ -162,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Throttled scroll listener using requestAnimationFrame for zero-lag 60fps scrolling
     let scrollChecking = false;
     window.addEventListener('scroll', () => {
+        updateVideoProgress();
         if (!scrollChecking) {
             window.requestAnimationFrame(() => {
                 handleScrollSectionCheck();
@@ -170,6 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollChecking = true;
         }
     });
+
+    window.addEventListener('resize', () => {
+        updateVideoProgress();
+        handleScrollSectionCheck();
+    }, { passive: true });
 
     // Run once on load to initialize first section states
     handleScrollSectionCheck();
