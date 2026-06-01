@@ -99,32 +99,15 @@ a {
     z-index: 1;
 }
 
-/* Beautiful Interactive CSS Gradients to replace heavy video files */
-#video-scene-1 {
-    background: radial-gradient(circle at 15% 25%, rgba(0, 102, 204, 0.11) 0%, transparent 55%),
-                radial-gradient(circle at 85% 75%, rgba(124, 58, 237, 0.11) 0%, transparent 55%),
-                #f8fafc;
-}
-#video-scene-3 {
-    background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.12) 0%, transparent 65%),
-                #faf5ff;
-}
-#video-scene-4 {
-    background: radial-gradient(circle at 80% 20%, rgba(0, 240, 255, 0.09) 0%, transparent 60%),
-                #f1f5f9;
-}
-#video-scene-5 {
-    background: radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.09) 0%, transparent 55%),
-                radial-gradient(circle at 75% 25%, rgba(6, 182, 212, 0.09) 0%, transparent 55%),
-                #ecfdf5;
-}
-#video-scene-7 {
-    background: radial-gradient(circle at 50% 30%, rgba(59, 130, 246, 0.09) 0%, transparent 60%),
-                #f0f9ff;
-}
-#video-scene-8 {
-    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.11) 0%, transparent 65%),
-                #e0e7ff;
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.85; /* Soft contrast with text overlay */
 }
 
 /* Vignette Overlay for Premium Cinema Contrast */
