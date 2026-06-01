@@ -243,9 +243,9 @@ app.post('/api/v1/setup-sandbox', async (req, res) => {
 app.get('/', (req, res) => {
   res.status(200).json({
     status: 'online',
-    service: 'Conversiq WABot Pro API Core Gateway',
+    service: 'WhatBot PRO API Core Gateway',
     version: '1.0.0',
-    documentation: 'https://wa.me/923120141581',
+    documentation: 'https://wa.link/b5f6ly',
     author: 'BITSOL Marketing',
     health: 'http://localhost:5001/health',
     timestamp: new Date()
