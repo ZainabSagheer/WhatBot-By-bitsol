@@ -46,12 +46,12 @@ async function runTest() {
                   profile: {
                     name: 'Zainab Sagheer',
                   },
-                  wa_id: '923120141581',
+                  wa_id: '923103175175',
                 },
               ],
               messages: [
                 {
-                  from: '923120141581',
+                  from: '923103175175',
                   id: 'meta-msg-uuid-99999-testing-id',
                   timestamp: Math.floor(Date.now() / 1000).toString(),
                   text: {
@@ -135,7 +135,7 @@ async function runTest() {
     where: {
       workspaceId_phoneNumber: {
         workspaceId: workspace.id,
-        phoneNumber: '923120141581',
+        phoneNumber: '923103175175',
       },
     },
   });

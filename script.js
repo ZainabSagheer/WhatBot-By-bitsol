@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const messageText = `Hi BITSOL Marketing! I saw the WhatBot PRO Landing Page and I want to try it out. Please guide me on the next steps!\n\n*My Onboarding Details:*\n• *Name:* ${nameInput}\n• *WhatsApp Number:* ${phoneInput}\n• *Business Niche:* ${categorySelect}\n• *Monthly WhatsApp Volume:* ${volumeSelect}\n\nThank you!`;
             const encodedText = encodeURIComponent(messageText);
             
-            const whatsappNumber = "923120141581"; 
+            const whatsappNumber = "923103175175"; 
             const directUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
             
             // Redirect after elegant checkmark pulse finishes animating
