@@ -1,0 +1,185 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 1. WORKSPACES (Tenants)
+model Workspace {
+  id                 String            @id @default(uuid())
+  name               String
+  metaPhoneNumberId  String?           @unique
+  metaWabaId         String?
+  metaAccessToken    String?
+  timezone           String            @default("UTC")
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  
+  // Relations
+  members            WorkspaceMember[]
+  contacts           Contact[]
+  conversations      Conversation[]
+  messages           Message[]
+  knowledgeBases     KnowledgeBase[]
+  automationFlows    AutomationFlow[]
+  campaigns          Campaign[]
+  auditLogs          AuditLog[]
+}
+
+// 2. USERS (Agents / Admins)
+model User {
+  id                 String            @id @default(uuid())
+  email              String            @unique
+  passwordHash       String
+  fullName           String
+  avatarUrl          String?
+  isActive           Boolean           @default(true)
+  createdAt          DateTime          @default(now())
+  
+  // Relations
+  memberships        WorkspaceMember[]
+  assignedContacts   Contact[]
+  assignedChats      Conversation[]
+  sentMessages       Message[]
+  auditLogs          AuditLog[]
+}
+
+// 3. WORKSPACE_MEMBERS (Tenant Membership mapping)
+model WorkspaceMember {
+  id          String    @id @default(uuid())
+  workspaceId String
+  userId      String
+  role        String    @default("AGENT") // ADMIN, MANAGER, AGENT
+  createdAt   DateTime  @default(now())
+
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+}
+
+// 4. CONTACTS (CRM Leads)
+model Contact {
+  id             String         @id @default(uuid())
+  workspaceId    String
+  phoneNumber    String
+  firstName      String?
+  lastName       String?
+  email          String?
+  stage          String         @default("NEW") // NEW, ENGAGED, QUALIFIED, CONVERTED
+  leadScore      Int            @default(0)
+  customFields   String         @default("{}") // Store JSON as string for compatibility
+  tags           String         @default("")   // Comma separated tags
+  isAiEnabled    Boolean        @default(true)
+  assignedUserId String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  workspace      Workspace      @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  assignedUser   User?          @relation(fields: [assignedUserId], references: [id], onDelete: SetNull)
+  conversations  Conversation[]
+
+  @@unique([workspaceId, phoneNumber])
+}
+
+// 5. CONVERSATIONS
+model Conversation {
+  id             String    @id @default(uuid())
+  workspaceId    String
+  contactId      String
+  isOpen         Boolean   @default(true)
+  assignedUserId String?
+  lastMessageAt  DateTime  @default(now())
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  workspace      Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  contact        Contact   @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  assignedUser   User?     @relation(fields: [assignedUserId], references: [id], onDelete: SetNull)
+  messages       Message[]
+}
+
+// 6. MESSAGES
+model Message {
+  id             String       @id @default(uuid())
+  workspaceId    String
+  conversationId String
+  metaMessageId  String?      @unique
+  direction      String       // INBOUND, OUTBOUND
+  senderId       String?      // Null if sent by bot/contact
+  textContent    String?
+  mediaUrl       String?
+  mediaType      String?      // image, document, audio, video
+  status         String       @default("SENT") // SENT, DELIVERED, READ, FAILED
+  failedReason   String?
+  sentAt         DateTime     @default(now())
+  deliveredAt    DateTime?
+  readAt         DateTime?
+
+  workspace      Workspace    @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         User?        @relation(fields: [senderId], references: [id], onDelete: SetNull)
+}
+
+// 7. KNOWLEDGE_BASES (AI Vector Sync context references)
+model KnowledgeBase {
+  id          String    @id @default(uuid())
+  workspaceId String
+  name        String
+  sourceType  String    // PDF, URL, FAQ, TEXT
+  sourceUrl   String?
+  rawContent  String?
+  createdAt   DateTime  @default(now())
+
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+// 8. AUTOMATION_FLOWS (No-Code flows configurations)
+model AutomationFlow {
+  id            String    @id @default(uuid())
+  workspaceId   String
+  name          String
+  triggerType   String    // KEYWORD, NEW_MESSAGE, WEBHOOK
+  triggerConfig String    @default("{}") // JSON string
+  flowGraph     String    // visual JSON schema string
+  isActive      Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  workspace     Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+// 9. CAMPAIGNS (Broadcasts tracking metrics)
+model Campaign {
+  id                   String    @id @default(uuid())
+  workspaceId          String
+  name                 String
+  metaTemplateName     String
+  metaTemplateLanguage String    @default("en")
+  scheduledAt          DateTime?
+  sentCount            Int       @default(0)
+  deliveredCount       Int       @default(0)
+  readCount            Int       @default(0)
+  failedCount          Int       @default(0)
+  isCompleted          Boolean   @default(false)
+  createdAt            DateTime  @default(now())
+
+  workspace            Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+// 10. AUDIT_LOGS
+model AuditLog {
+  id          String    @id @default(uuid())
+  workspaceId String
+  userId      String?
+  action      String
+  ipAddress   String?
+  details     String    @default("{}") // JSON details string
+  createdAt   DateTime  @default(now())
+
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user        User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+}

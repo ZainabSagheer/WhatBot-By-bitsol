@@ -66,7 +66,7 @@
     <header class="header" id="main-header">
         <div class="nav-container">
             <a href="#hero" class="logo" id="nav-logo" aria-label="Conversiq Home">
-                <svg viewBox="0 0 100 100" class="logo-icon-svg" style="width: 34px; height: 34px; flex-shrink: 0;" aria-hidden="true">
+                <svg viewBox="0 0 100 100" class="logo-icon-svg" aria-hidden="true">
                     <defs>
                         <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="var(--neon-blue)" />
@@ -241,8 +241,8 @@
         <div class="container">
             <div class="growth-grid">
                 <div class="reveal">
-                    <div class="section-intro" style="text-align: left; margin-bottom: 2.5rem;">
-                        <span class="hero-tag" style="margin-bottom: 1.5rem;">Unrivaled Performance</span>
+                    <div class="section-intro growth-intro">
+                        <span class="hero-tag growth-tag">Unrivaled Performance</span>
                         <h2 class="gradient-text">Engineered for Massive Business Scale</h2>
                         <p>Watch your sales pipeline accelerate as AI answers every client lead instantaneously.</p>
                     </div>
@@ -268,23 +268,23 @@
                                 <div class="wire-dot"></div>
                                 <div class="wire-dot"></div>
                             </div>
-                            <div class="hero-tag" style="margin: 0; font-size: 0.65rem; padding: 0.3rem 0.8rem;">CONVERSIQ ENGAGEMENT ANALYTICS</div>
+                            <div class="hero-tag dashboard-wire-tag">CONVERSIQ ENGAGEMENT ANALYTICS</div>
                         </div>
                         <div class="wire-bar-chart">
-                            <div class="wire-bar" style="--h: 25%"></div>
-                            <div class="wire-bar" style="--h: 38%"></div>
-                            <div class="wire-bar" style="--h: 30%"></div>
-                            <div class="wire-bar" style="--h: 55%"></div>
-                            <div class="wire-bar" style="--h: 42%"></div>
-                            <div class="wire-bar active" style="--h: 92%"></div>
+                            <div class="wire-bar h-25"></div>
+                            <div class="wire-bar h-38"></div>
+                            <div class="wire-bar h-30"></div>
+                            <div class="wire-bar h-55"></div>
+                            <div class="wire-bar h-42"></div>
+                            <div class="wire-bar active h-92"></div>
                         </div>
-                        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-secondary); padding: 0 0.5rem;">
+                        <div class="wire-labels">
                             <span>Mon</span>
                             <span>Tue</span>
                             <span>Wed</span>
                             <span>Thu</span>
                             <span>Fri</span>
-                            <span class="glow-blue" style="font-weight: bold; color: var(--neon-blue);">Sat (AI Enabled)</span>
+                            <span class="glow-blue wire-label-active">Sat (AI Enabled)</span>
                         </div>
                     </div>
                 </div>
@@ -295,7 +295,7 @@
     <!-- SECTION 5: Core Features Grid -->
     <section id="features">
         <div class="container">
-            <div class="section-intro" style="margin-left: auto; margin-right: auto; max-width: 600px;">
+            <div class="section-intro features-intro">
                 <span class="hero-tag">Technological Depth</span>
                 <h2 class="gradient-text">Engineered for Complete Control</h2>
                 <p>An enterprise-grade stack customized and deployed for your business structure.</p>
@@ -387,9 +387,9 @@
         <div class="container">
             <div class="pricing-wrapper reveal">
                 <div class="pricing-card glass-panel">
-                    <div class="pricing-tier">Enterprise Acceleration Package</div>
-                    <div class="pricing-cost">PKR 20,000</div>
-                    <div class="pricing-period">One-Time Setup Investment</div>
+                    <div class="pricing-tier">Conversiq SaaS License</div>
+                    <div class="pricing-cost">PKR 5,000 + 2,000/mo</div>
+                    <div class="pricing-period">Onboarding Setup Fee & Monthly Subscription</div>
                     
                     <ul class="pricing-features">
                         <li>
@@ -428,7 +428,7 @@
         <div class="container">
             <div class="cta-layout">
                 <div class="cta-info reveal">
-                    <span class="hero-tag" style="margin-bottom: 1.5rem;">Start Scaling Today</span>
+                    <span class="hero-tag cta-tag">Start Scaling Today</span>
                     <h2>Ready to Supercharge your WhatsApp?</h2>
                     <p>
                         Scale your customer interactions from overwhelmed to hyper-efficient. Let Conversiq turn your chats into direct conversions, backed by BITSOL Marketing's top-tier integration services.
@@ -446,8 +446,8 @@
                             </div>
                         </div>
                         <!-- Live Testing Phone Card -->
-                        <div class="contact-meta-item" style="margin-top: 1.25rem;">
-                            <div class="contact-icon" style="color: var(--neon-blue); border-color: rgba(0, 240, 255, 0.25);">
+                        <div class="contact-meta-item contact-meta-second">
+                            <div class="contact-icon contact-icon-blue">
                                 <svg fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                             </div>
                             <div class="contact-details">
@@ -458,17 +458,17 @@
                     </div>
                 </div>
 
-                <div class="cta-action-panel glass-panel reveal" style="padding: 3.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;">
-                    <div class="intro-icon-wrapper" style="margin: 0; width: 68px; height: 68px;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;">
+                <div class="cta-action-panel glass-panel reveal cta-action-panel-custom">
+                    <div class="intro-icon-wrapper cta-panel-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="cta-panel-icon-svg">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                     </div>
                     <h3>Start Your Conversiq Journey</h3>
-                    <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem; margin: 0 auto; text-align: center; margin-top: -1rem;">Secure your custom AI setup package and sync Conversiq AI to your business today.</p>
+                    <p class="cta-panel-text">Secure your custom AI setup package and sync Conversiq AI to your business today.</p>
                     <!-- CTA #3 -->
-                    <button class="btn btn-primary trigger-modal" style="width: 100%; max-width: 280px; border: none;">
+                    <button class="btn btn-primary trigger-modal cta-panel-btn">
                         <span>Try Conversiq</span>
                     </button>
                 </div>
@@ -541,7 +541,7 @@
             </div>
 
             <!-- Glowing Glassmorphic Success State -->
-            <div id="modalSuccessState" style="display: none;">
+            <div id="modalSuccessState" class="display-none">
                 <div class="success-checkmark-wrapper">
                     <svg class="success-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
                         <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
@@ -572,7 +572,7 @@
         <!-- Sound Toggle Button -->
         <button class="control-btn" id="soundToggle" aria-label="Toggle cinematic audio">
             <svg class="sound-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
-            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            <svg class="sound-icon-on display-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
             <span id="soundText">Sound: Off</span>
         </button>
     </div>

@@ -4,3 +4,11 @@ dist/
 .DS_Store
 Thumbs.db
 *.log
+
+# Local environment & database files
+.env
+.env.local
+server/.env
+server/prisma/*.db
+server/prisma/*.db-journal
+.vscode/
