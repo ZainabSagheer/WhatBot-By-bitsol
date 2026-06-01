@@ -1,7 +1,7 @@
 {
-  "name": "conversiq-landing-page",
+  "name": "whatbotpro-landing-page",
   "version": "1.0.0",
-  "description": "Premium cinematic SaaS landing page for Conversiq WhatsApp Chat Bot by BITSOL Marketing",
+  "description": "Premium cinematic SaaS landing page for WhatBot PRO WhatsApp Chat Bot by BITSOL Marketing",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

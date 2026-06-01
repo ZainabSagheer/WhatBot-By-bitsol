@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const conversationFlows = {
         replies: [
             { type: 'received', text: 'AOA, custom chat bot ki details mil sakti hain?', delay: 1200 },
-            { type: 'sent', text: 'Walaikum Assalam! Conversiq AI mein khushamdeed. 🌟 Main aik fully custom AI agent hoon aur Roman Urdu, English ya pure Urdu sab samajh sakta hoon.', delay: 2200 },
+            { type: 'sent', text: 'Walaikum Assalam! WhatBot PRO mein khushamdeed. 🌟 Main aik fully custom AI agent hoon aur Roman Urdu, English ya pure Urdu sab samajh sakta hoon.', delay: 2200 },
             { type: 'received', text: 'Roman Urdu me support ksy chalti h?', delay: 1400 },
             { type: 'sent', text: 'Bilkul seamless! Main customer ka local dialect aur context exact catch kar ke simple language mein friendly answer deta hoon, bilkul aik expert sales rep ki tarah.', delay: 2400 }
         ],
@@ -359,10 +359,10 @@ document.addEventListener('DOMContentLoaded', () => {
             { type: 'received', text: 'Are you guys available right now to take my booking?', delay: 1000 },
             { type: 'sent', text: 'Yes, absolutely! 🏪 Main 24/7 online active hoon. Aap ka physical store band ho jaye phir bhi main chats handle aur sales book karta rehta hoon!', delay: 2200 },
             { type: 'received', text: 'Great! Secure a consultation slot for tomorrow.', delay: 1500 },
-            { type: 'sent', text: 'Done! Slot booked successfully. 📅 Logged under Conversiq booking database. We look forward to talking tomorrow!', delay: 2000 }
+            { type: 'sent', text: 'Done! Slot booked successfully. 📅 Logged under WhatBot PRO booking database. We look forward to talking tomorrow!', delay: 2000 }
         ],
         capture: [
-            { type: 'received', text: 'Hi, I want to try Conversiq. Please register my business.', delay: 1000 },
+            { type: 'received', text: 'Hi, I want to try WhatBot PRO. Please register my business.', delay: 1000 },
             { type: 'sent', text: 'Wonderful! ⚡ May I please have your Full Name and business category to log your profile details?', delay: 2000 },
             { type: 'received', text: 'Hammad Khan, E-commerce Store.', delay: 1400 },
             { type: 'sent', text: 'Logged! 📝 [Sync Success: Hammad Khan | E-commerce Store]. Details automatically synced directly to BITSOL lead manager sheet. Our team will contact you in a few minutes!', delay: 2400 }
@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Compile rich lead text for direct WhatsApp link
-            const messageText = `Hi BITSOL Marketing! I saw the Conversiq AI Landing Page and I want to try it out. Please guide me on the next steps!\n\n*My Onboarding Details:*\n• *Name:* ${nameInput}\n• *WhatsApp Number:* ${phoneInput}\n• *Business Niche:* ${categorySelect}\n• *Monthly WhatsApp Volume:* ${volumeSelect}\n\nThank you!`;
+            const messageText = `Hi BITSOL Marketing! I saw the WhatBot PRO Landing Page and I want to try it out. Please guide me on the next steps!\n\n*My Onboarding Details:*\n• *Name:* ${nameInput}\n• *WhatsApp Number:* ${phoneInput}\n• *Business Niche:* ${categorySelect}\n• *Monthly WhatsApp Volume:* ${volumeSelect}\n\nThank you!`;
             const encodedText = encodeURIComponent(messageText);
             
             const whatsappNumber = "923120141581"; 
